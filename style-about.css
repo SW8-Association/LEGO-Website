@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Press Start 2P';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #5c94fc;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 2px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-size: 40px 40px;
+}
+.container-header {
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+.navbar-header {
+  margin: 13px auto;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.play-button {
+  background-color: #a3cb38;
+  padding: 15px 10px 15px 10px;
+  border: 2px solid black;
+  border-radius: 3px;
+  box-shadow: 4px 4px 0 black;
+  font-size: 13px;
+  text-align: center;
+  align-content: center;
+  letter-spacing: 1px;
+  transform: all 0.1s ease-in-out;
+}
+
+.play-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #2d2d2d;
+}
+
+.play-button:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+.play-button a {
+  text-decoration: none;
+  color: black;
+}
+.middle-header {
+  font-size: 8px;
+  color: black;
+}
+.middle-header p span {
+  color: #0d6efd;
+}
+.right-header {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-size: 8px;
+  gap: 30px;
+}
+.right-header span {
+  opacity: 0.2;
+}
+.sign-in a,
+.insider a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.sign-in a img,
+.insider a img {
+  width: 15px;
+  height: 15px;
+}
+
+.sign-in a p,
+.insider a p {
+  color: #0d6efd;
+}
+
+.main-nav {
+  width: 100%;
+  background: #ffdf51;
+  border-bottom: 2px solid #000;
+}
+
+.main-nav-inner {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.lego-logo {
+  background: #e3000b;
+  padding: 6px;
+  transform: all 0.2s ease-in-out;
+}
+.lego-logo:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 #2d2d2d;
+}
+
+.lego-logo:active {
+  box-shadow: none;
+  transform: translate(0px, 0px);
+}
+
+.lego-logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 14px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  display: inline-block;
+  transition: transform 0.1s steps(2), box-shadow 0.1s steps(2),
+    background-color 0.1s steps(2), border 0.1s steps(2);
+}
+
+.nav-links a:hover {
+  background: #f4d03f;
+  border: 2px solid #000;
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.nav-links a:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.nav-icons a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.nav-icons a img {
+  width: 20px;
+  height: 20px;
+}
+.main-content {
+  width: 85%;
+  padding: 40px;
+  background-color: white;
+  border: 4px solid #000000;
+  box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.4);
+  margin-top: 40px;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px 30px;
+}
+.header-title {
+  display: flex;
+  justify-content: center;
+}
+.header-title img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  margin-top: -10px;
+}
+.header-title h1 {
+  color: #dc2626;
+  text-shadow: 3px 3px #000;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 10px;
+  max-width: 720px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.divider {
+  height: 18px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000 0,
+    #000 40px,
+    #fff 40px,
+    #fff 50px
+  );
+  margin: 40px 0;
+}
+
+main {
+  width: 85%;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: 31% 31% 31%;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+
+.card {
+  position: relative;
+  border: 6px solid #000;
+  border-radius: 10px;
+  padding: 22px 18px 24px;
+  box-shadow: 6px 6px #000;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translate(-6px, -6px);
+  box-shadow: 12px 12px #000;
+}
+
+.studs-top {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.stud {
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  margin: 12px auto;
+  border: 5px solid #000;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 11px;
+  color: #000;
+  margin-top: 10px;
+}
+
+.role {
+  font-size: 9px;
+  margin: 6px 0;
+}
+
+.desc {
+  font-size: 8px;
+  line-height: 1.7;
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  background: #000;
+  color: #fff;
+  font-size: 7px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 3px solid #000;
+}
+
+.red {
+  background: #f87171;
+}
+.yellow {
+  background: #facc15;
+}
+.blue {
+  background: #60a5fa;
+}
+.green {
+  background: #4ade80;
+}
+.purple {
+  background: #a78bfa;
+}
+.orange {
+  background: #fb923c;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #000;
+  background: #fafafa;
+  font-size: 10px;
+}
