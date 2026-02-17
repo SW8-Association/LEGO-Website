@@ -4,20 +4,19 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Press Start 2P';
+  font-family: "Press Start 2P";
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #5c94fc;
   padding: 0;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 2px,
-      transparent 2px
-    ),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
   background-size: 40px 40px;
 }
+
 .container-header {
   width: 100%;
   background: white;
@@ -150,8 +149,11 @@ header {
   border: 2px solid transparent;
   border-radius: 5px;
   display: inline-block;
-  transition: transform 0.1s steps(2), box-shadow 0.1s steps(2),
-    background-color 0.1s steps(2), border 0.1s steps(2);
+  transition:
+    transform 0.1s steps(2),
+    box-shadow 0.1s steps(2),
+    background-color 0.1s steps(2),
+    border 0.1s steps(2);
 }
 
 .nav-links a:hover {
@@ -176,6 +178,137 @@ header {
   height: 20px;
 }
 
+.cartTab {
+  width: min(420px, 92vw);
+  background:
+    radial-gradient(circle at 22px 22px, #ffd24a 0 12px, transparent 13px) 0 0 /
+      44px 44px,
+    #e3000b;
+  color: #fff;
+  position: fixed;
+  inset: 0 0 0 auto;
+  display: grid;
+  grid-template-rows: 88px 1fr 88px;
+  border-left: 4px solid #000;
+  box-shadow: -10px 0 0 #000;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+body.showCart .cartTab {
+  transform: translateX(0);
+}
+
+.cartTab h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #000;
+  text-shadow: 2px 2px 0 #fff;
+  border-bottom: 4px solid #000;
+  background: #ffdf51;
+}
+
+.listCart {
+  padding: 16px;
+  overflow-y: auto;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(0, 0, 0, 0.12)),
+    #f7f7f7;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listCart .item {
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.listCart .item img {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+.listCart .item .name {
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.listCart .item .totalPrice,
+.listCart .item .price {
+  color: #e3000b;
+  font-size: 9px;
+}
+
+.listCart .quantity {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffdf51;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 3px 6px;
+}
+
+.listCart .quantity span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  font-size: 9px;
+}
+
+.listCart .quantity span:not(:nth-child(2)) {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cartTab .btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 14px;
+  background: #fff;
+  border-top: 4px solid #000;
+}
+
+.cartTab .btn button {
+  border: 3px solid #000;
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  padding: 12px 8px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #000;
+  transition: transform 0.1s steps(2);
+}
+
+.cartTab .btn .close {
+  background: #d9d9d9;
+  color: #000;
+}
+
+.cartTab .btn .checkOut {
+  background: #a3cb38;
+  color: #000;
+}
+
 /* ================= MAIN CONTENT ================= */
 
 .main-content {
@@ -185,7 +318,7 @@ header {
   padding: 40px;
   border: 4px solid #000;
   box-shadow: 12px 12px 0 #000;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 /* ================= SLIDER ================= */
@@ -265,7 +398,7 @@ header {
 }
 
 .section-header h2 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   color: #dc2626;
   text-shadow: 3px 3px #000;
 }
@@ -339,7 +472,7 @@ header {
   padding: 6px 8px;
   margin-right: 4px;
   font-size: 9px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   border-radius: 4px;
   border: 2px solid #000;
   background-color: #f4d03f;
@@ -356,7 +489,7 @@ header {
 }
 
 .price {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 18px;
   font-weight: bold;
   color: #dc2626;
@@ -382,7 +515,7 @@ header {
   background: #f4d03f;
   border: 2px solid #000;
   border-radius: 15px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   text-transform: uppercase;
   font-size: 13px;
   padding: 9px;
@@ -407,7 +540,7 @@ header {
 .about-us {
   width: 100%;
   margin: 40px auto;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .about-us h2 {
@@ -452,7 +585,7 @@ header {
   border: 2px solid #000;
   border-radius: 30px;
   padding: 15px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 
   cursor: pointer;
   text-transform: uppercase;
