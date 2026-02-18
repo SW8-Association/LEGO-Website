@@ -463,6 +463,15 @@ body.showCart .cartTab {
   border-bottom: 2px solid #000;
 }
 
+.product-image-link {
+  display: block;
+}
+
+.product-title-link {
+  text-decoration: none;
+  color: #000;
+}
+
 .badges {
   margin-bottom: 6px;
 }
@@ -506,6 +515,14 @@ body.showCart .cartTab {
   font-size: 16px;
   color: #f1c40f;
   margin: 4px 0;
+}
+
+.details-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #0d6efd;
+  font-size: 9px;
+  margin-bottom: 12px;
 }
 
 /* ADD TO BAG BUTTON */
