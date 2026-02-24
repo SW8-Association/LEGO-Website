@@ -62,9 +62,9 @@ const createDetails = (product) => {
         <p class="detail-price">
           $${finalPrice}
           ${
-            product.discount > 0 ?
-              `<span class="discount">$${product.price.toFixed(2)}</span>`
-            : ""
+            product.discount > 0
+              ? `<span class="discount">$${product.price.toFixed(2)}</span>`
+              : ""
           }
         </p>
         <p class="detail-description">${setupProductDes(product)}</p>
@@ -74,7 +74,12 @@ const createDetails = (product) => {
           <li>Age Recommendation: 9+</li>
           <li>Theme: ${theme}</li>
         </ul>
+
         <button class="add-to-bag">Add to Bag</button>
+        <a href="inquiry-form.html?id=${product.id}" class="send-inquiry-btn ">
+            Send Inquiry
+          </a>
+        
         <a class="back-link" href="/sale.html">Back to All Products</a>
       </div>
     </article>

@@ -258,7 +258,9 @@ header {
   border-radius: 8px;
   background: #fff;
   cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .detail-thumbs img:hover {
@@ -697,4 +699,134 @@ body.showCart .cartTab {
   .product-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.send-inquiry-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d6efd;
+  color: white;
+  border: 2px solid #000;
+  border-radius: 12px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 11px;
+  padding: 12px 9px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.1s steps(2);
+}
+
+.send-inquiry-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000;
+  background: #0b5ed7;
+}
+
+.send-inquiry-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.inquiry-section h2 {
+  color: #dc2626;
+  text-shadow: 3px 3px #000;
+  margin-bottom: 30px;
+}
+
+/* FORM */
+.pixel-form {
+  background: #fff;
+  padding: 30px;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  margin-bottom: 50px;
+}
+
+.pixel-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.pixel-group label {
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+
+.pixel-group input,
+.pixel-group textarea {
+  border: 3px solid #000;
+  padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 9px;
+  background: #ffdf51;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.pixel-group input:focus,
+.pixel-group textarea:focus {
+  outline: none;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.error {
+  color: #e3000b;
+  font-size: 8px;
+  margin-top: 5px;
+}
+
+/* BUTTON */
+.pixel-btn {
+  background: #a3cb38;
+  border: 3px solid #000;
+  padding: 15px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  cursor: pointer;
+  box-shadow: 6px 6px 0 #000;
+  transition: all 0.1s steps(2);
+}
+
+.pixel-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 #000;
+}
+
+.pixel-btn:active {
+  transform: translate(6px, 6px);
+  box-shadow: none;
+}
+
+/* TABLE */
+.inquiry-table h3 {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.inquiry-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000;
+}
+
+.inquiry-table th,
+.inquiry-table td {
+  border: 3px solid #000;
+  padding: 12px;
+  font-size: 8px;
+  text-align: center;
+}
+
+.inquiry-table th {
+  background: #ffdf51;
+  color: #000;
+}
+
+.inquiry-table tr:nth-child(even) {
+  background: #f4f4f4;
 }
