@@ -20,14 +20,14 @@ const getDetailBadges = (product) => {
 const getDetailStats = (product) => ({
     reviewCount: 120 + product.id * 17,
     pieces: 320 + product.id * 68,
-    setNumber: 75000 + product.id,
+    setPrice: 75000 + product.id,
     theme: product.badges.includes("Star Wars") ? "Star Wars" : "Adventure",
 });
 
 const createDetails = (product) => {
     const finalPrice = getProductFinalPrice(product).toFixed(2);
     const badges = getDetailBadges(product);
-    const { reviewCount, pieces, setNumber, theme } = getDetailStats(product);
+    const { reviewCount, pieces, setPrice, theme } = getDetailStats(product);
     const images = getProductImages(product);
     const mainImage = images[0] || "";
 
@@ -70,7 +70,7 @@ const createDetails = (product) => {
         </p>
         <p class="detail-description">${setupProductDes(product)}</p>
         <ul class="detail-meta">
-          <li>Set Number: ${setNumber}</li>
+          <li>Prices: ${setPrice}</li>
           <li>Pieces: ${pieces}</li>
           <li>Age Recommendation: 9+</li>
           <li>Theme: ${theme}</li>

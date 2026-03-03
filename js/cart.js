@@ -29,13 +29,15 @@ const renderCartItems = () => {
             <div class="name">${item.title}</div>
             <div class="totalPrice">$${total}</div>
           </div>
-          <div class="quantity">
-            <span class="minus">-</span>
-            <span>${item.quantity}</span>
-            <span class="plus">+</span>
-          </div>
-          <div class="removeBtn">
-            <button>Remove</button>
+          <div class="itemActions">
+            <div class="quantity">
+              <span class="minus">-</span>
+              <span>${item.quantity}</span>
+              <span class="plus">+</span>
+            </div>
+            <div class="removeBtn">
+              <button class="btnRemove">Remove</button>
+            </div>
           </div>
         </div>
       `;
@@ -77,15 +79,28 @@ if (listCart) {
         );
         if (itemIndex < 0) return;
 
-        if (event.target.classList.contains("plus")) {
+        const clickedPlus = event.target.classList.contains("plus");
+        const clickedMinus = event.target.classList.contains("minus");
+        const clickedRemove = event.target.closest(".btnRemove");
+
+        if (!clickedPlus && !clickedMinus && !clickedRemove) return;
+
+        if (clickedPlus) {
             carts[itemIndex].quantity += 1;
         }
 
-        if (event.target.classList.contains("minus")) {
-            carts[itemIndex].quantity -= 1;
-            if ((carts[itemIndex].quantity = 1)) {
+        if (clickedMinus) {
+            if (carts[itemIndex].quantity === 1) {
+                carts[itemIndex].quantity = 1;
+            } else if (carts[itemIndex].quantity <= 0) {
                 carts.values(itemIndex, 1);
+            } else {
+                carts[itemIndex].quantity -= 1;
             }
+        }
+
+        if (clickedRemove) {
+            carts.splice(itemIndex, 1);
         }
 
         addCartToHTML();
@@ -99,7 +114,6 @@ renderCartItems();
 
 //CheckOut - Clear card items
 const checkoutBtn = document.querySelector(".checkOut");
-
 if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
         carts = [];

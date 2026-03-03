@@ -231,8 +231,9 @@ body.showCart .cartTab {
     padding: 10px;
     display: grid;
     grid-template-columns: 70px 1fr auto;
+    grid-template-rows: auto auto;
     gap: 10px;
-    align-items: center;
+    align-items: start;
 }
 
 .listCart .item img {
@@ -254,6 +255,15 @@ body.showCart .cartTab {
     font-size: 9px;
 }
 
+.listCart .itemActions {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
 .listCart .quantity {
     display: inline-flex;
     align-items: center;
@@ -262,6 +272,7 @@ body.showCart .cartTab {
     border: 2px solid #000;
     border-radius: 8px;
     padding: 3px 6px;
+    justify-self: end;
 }
 
 .listCart .quantity span {
@@ -280,14 +291,37 @@ body.showCart .cartTab {
     cursor: pointer;
 }
 
-.listCart .removeBtn {
-    display: inline-flex;
-    align-items: center;
+.listCart button {
     background: #ffdf51;
     border: 2px solid #000;
     border-radius: 8px;
     padding: 3px 6px;
-    align-items: end;
+}
+
+.listCart .removeBtn {
+    justify-self: end;
+}
+
+.listCart .removeBtn button {
+    font-family: "Press Start 2P", cursive;
+    font-size: 8px;
+    color: #fff;
+    background: #e3000b;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 5px 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.1s steps(2);
+}
+
+.listCart .removeBtn button:hover {
+    transform: translate(-1px, -1px);
+}
+
+.listCart .removeBtn button:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
 }
 
 .cartTab .btn {
