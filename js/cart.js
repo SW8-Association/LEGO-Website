@@ -34,6 +34,9 @@ const renderCartItems = () => {
             <span>${item.quantity}</span>
             <span class="plus">+</span>
           </div>
+          <div class="removeBtn">
+            <button>Remove</button>
+          </div>
         </div>
       `;
         })
@@ -80,8 +83,8 @@ if (listCart) {
 
         if (event.target.classList.contains("minus")) {
             carts[itemIndex].quantity -= 1;
-            if (carts[itemIndex].quantity <= 0) {
-                carts.splice(itemIndex, 1);
+            if ((carts[itemIndex].quantity = 1)) {
+                carts.values(itemIndex, 1);
             }
         }
 
