@@ -94,6 +94,16 @@ if (listCart) {
 addCartToHTML();
 renderCartItems();
 
+//CheckOut - Clear card items
+const checkoutBtn = document.querySelector(".checkOut");
+
+if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", () => {
+        carts = [];
+        addCartToHTML();
+        renderCartItems();
+    });
+}
 // App Bootstrap
 document.addEventListener("DOMContentLoaded", () => {
     renderTeamMembers();
@@ -119,6 +129,8 @@ document.addEventListener("click", (event) => {
 
     addToCart(productData);
 });
+
+document;
 
 // Cart Panel Toggle
 const setupCartToggle = () => {
