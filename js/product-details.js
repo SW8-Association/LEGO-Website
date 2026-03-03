@@ -1,36 +1,37 @@
 // Product Details Data + Rendering
+
 const setupProductDes = (product) =>
-  `Build ${product.title} and recreate your favorite scenes with iconic details, rich colors, and display-ready pieces for collectors and fans alike.`;
+    `Build ${product.title} and recreate your favorite scenes with iconic details, rich colors, and display-ready pieces for collectors and fans alike.`;
 
 const getSelectedProduct = () => {
-  const params = new URLSearchParams(window.location.search);
-  const id = Number(params.get("id"));
-  return products.find((product) => product.id === id) || products[0];
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get("id"));
+    return products.find((product) => product.id === id) || products[0];
 };
 
 const getDetailBadges = (product) => {
-  const badges = [...product.badges];
-  if (product.discount > 0 && !badges.includes("Sale")) {
-    badges.push("Sale");
-  }
-  return badges;
+    const badges = [...product.badges];
+    if (product.discount > 0 && !badges.includes("Sale")) {
+        badges.push("Sale");
+    }
+    return badges;
 };
 
 const getDetailStats = (product) => ({
-  reviewCount: 120 + product.id * 17,
-  pieces: 320 + product.id * 68,
-  setNumber: 75000 + product.id,
-  theme: product.badges.includes("Star Wars") ? "Star Wars" : "Adventure",
+    reviewCount: 120 + product.id * 17,
+    pieces: 320 + product.id * 68,
+    setNumber: 75000 + product.id,
+    theme: product.badges.includes("Star Wars") ? "Star Wars" : "Adventure",
 });
 
 const createDetails = (product) => {
-  const finalPrice = getProductFinalPrice(product).toFixed(2);
-  const badges = getDetailBadges(product);
-  const { reviewCount, pieces, setNumber, theme } = getDetailStats(product);
-  const images = getProductImages(product);
-  const mainImage = images[0] || "";
+    const finalPrice = getProductFinalPrice(product).toFixed(2);
+    const badges = getDetailBadges(product);
+    const { reviewCount, pieces, setNumber, theme } = getDetailStats(product);
+    const images = getProductImages(product);
+    const mainImage = images[0] || "";
 
-  return `
+    return `
     <article
       class="detail-card"
       data-id="${product.id}"
@@ -44,11 +45,11 @@ const createDetails = (product) => {
         </div>
         <div class="detail-thumbs">
           ${images
-            .map(
-              (image, index) =>
-                `<img class="${index === 0 ? "is-active" : ""}" src="${image}" data-image="${image}" alt="${product.title} preview ${index + 1}">`,
-            )
-            .join("")}
+              .map(
+                  (image, index) =>
+                      `<img class="${index === 0 ? "is-active" : ""}" src="${image}" data-image="${image}" alt="${product.title} preview ${index + 1}">`,
+              )
+              .join("")}
         </div>
       </div>
 
@@ -62,9 +63,9 @@ const createDetails = (product) => {
         <p class="detail-price">
           $${finalPrice}
           ${
-            product.discount > 0
-              ? `<span class="discount">$${product.price.toFixed(2)}</span>`
-              : ""
+              product.discount > 0
+                  ? `<span class="discount">$${product.price.toFixed(2)}</span>`
+                  : ""
           }
         </p>
         <p class="detail-description">${setupProductDes(product)}</p>
@@ -87,31 +88,44 @@ const createDetails = (product) => {
 };
 
 const renderProductDetailsPage = () => {
-  const detailsContainer = document.getElementById("product-details");
-  if (!detailsContainer) return;
+    const detailsContainer = document.getElementById("product-details");
+    if (!detailsContainer) return;
 
-  const selectedProduct = getSelectedProduct();
-  detailsContainer.innerHTML = createDetails(selectedProduct);
-  setupDetailGallery();
+    const selectedProduct = getSelectedProduct();
+    detailsContainer.innerHTML = createDetails(selectedProduct);
+    setupDetailGallery();
 };
+
+// Product Helpers
+const getProductFinalPrice = (product) =>
+    Number((product.price * (1 - product.discount)).toFixed(2));
+
+const getProductImages = (product) => {
+    if (Array.isArray(product.image)) return product.image.filter(Boolean);
+    return product.image ? [product.image] : [];
+};
+
+const getPrimaryProductImage = (product) => getProductImages(product)[0] || "";
+
+const renderStars = (rating) => "&#9733;".repeat(Math.floor(rating));
 
 // Product Details Gallery Interactions
 const setupDetailGallery = () => {
-  const detailCard = document.querySelector(".detail-card");
-  if (!detailCard) return;
+    const detailCard = document.querySelector(".detail-card");
+    if (!detailCard) return;
 
-  const mainImage = detailCard.querySelector(".detail-main-image img");
-  const thumbnails = detailCard.querySelectorAll(".detail-thumbs img");
-  if (!mainImage || thumbnails.length === 0) return;
+    const mainImage = detailCard.querySelector(".detail-main-image img");
+    const thumbnails = detailCard.querySelectorAll(".detail-thumbs img");
+    if (!mainImage || thumbnails.length === 0) return;
 
-  thumbnails.forEach((thumbnail) => {
-    thumbnail.addEventListener("click", () => {
-      const nextImage = thumbnail.dataset.image || thumbnail.src;
-      if (!nextImage) return;
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener("click", () => {
+            const nextImage = thumbnail.dataset.image || thumbnail.src;
+            if (!nextImage) return;
 
-      mainImage.src = nextImage;
-      thumbnails.forEach((item) => item.classList.remove("is-active"));
-      thumbnail.classList.add("is-active");
+            mainImage.src = nextImage;
+            thumbnails.forEach((item) => item.classList.remove("is-active"));
+            thumbnail.classList.add("is-active");
+        });
     });
-  });
 };

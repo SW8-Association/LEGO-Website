@@ -1,117 +1,120 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+            rel="stylesheet"
+        />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style-sale.css" />
-    <title>Lego</title>
-  </head>
-  <body>
-    <div class="container-header">
-      <header>
-        <div class="play-button">
-          <a href=""><p>PLAY ZONE</p></a>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style-sale.css" />
+        <title>Lego</title>
+    </head>
+    <body>
+        <div class="container-header">
+            <header>
+                <div class="play-button">
+                    <a href=""><p>PLAY ZONE</p></a>
+                </div>
+                <div class="middle-header">
+                    <p>Sale now on! <span> Shop now</span></p>
+                </div>
+                <div class="right-header">
+                    <div class="sign-in">
+                        <a href=""
+                            ><img
+                                src="https://assets.lego.com/icons/v7.7.0/account-profile-color.svg"
+                                alt=""
+                            />
+                            <p>Sign In</p></a
+                        >
+                    </div>
+                    <span>|</span>
+                    <div class="insider">
+                        <a href=""
+                            ><img
+                                src="https://assets.lego.com/icons/v7.7.0/brick-one-by-one-side-blue.svg"
+                                alt=""
+                            />
+                            <p>Join LEGO® Insiders</p></a
+                        >
+                    </div>
+                </div>
+            </header>
         </div>
-        <div class="middle-header">
-          <p>Sale now on! <span> Shop now</span></p>
-        </div>
-        <div class="right-header">
-          <div class="sign-in">
-            <a href=""
-              ><img
-                src="https://assets.lego.com/icons/v7.7.0/account-profile-color.svg"
-                alt=""
-              />
-              <p>Sign In</p></a
-            >
-          </div>
-          <span>|</span>
-          <div class="insider">
-            <a href=""
-              ><img
-                src="https://assets.lego.com/icons/v7.7.0/brick-one-by-one-side-blue.svg"
-                alt=""
-              />
-              <p>Join LEGO® Insiders</p></a
-            >
-          </div>
-        </div>
-      </header>
-    </div>
-    <nav class="main-nav">
-      <div class="main-nav-inner">
-        <div class="nav-left">
-          <a href="/index.html" class="lego-logo">
-            <img src="/img/brand-lego.png" alt="LEGO" />
-          </a>
+        <nav class="main-nav">
+            <div class="main-nav-inner">
+                <div class="nav-left">
+                    <a href="/index.html" class="lego-logo">
+                        <img src="/img/brand-lego.png" alt="LEGO" />
+                    </a>
 
-          <ul class="nav-links">
-            <li><a href="/index.html">HOME</a></li>
-            <li><a href="/About_Us.html">ABOUT</a></li>
-            <li>
-              <a
-                href="/sale.html"
-                class="sale-link"
-                style="
-                  color: #e3000b;
-                  background: white;
-                  padding: 14px 19px 14px 19px;
-                  border: 2px solid #000;
-                  border-radius: 5px;
-                "
-                >SALE</a
-              >
-            </li>
-          </ul>
-        </div>
+                    <ul class="nav-links">
+                        <li><a href="/index.html">HOME</a></li>
+                        <li><a href="/About_Us.html">ABOUT</a></li>
+                        <li>
+                            <a
+                                href="/sale.html"
+                                class="sale-link"
+                                style="
+                                    color: #e3000b;
+                                    background: white;
+                                    padding: 14px 19px 14px 19px;
+                                    border: 2px solid #000;
+                                    border-radius: 5px;
+                                "
+                                >SALE</a
+                            >
+                        </li>
+                    </ul>
+                </div>
 
-        <div class="nav-icons">
-          <a href="#"><img src="/img/heart.png" alt="" /></a>
-          <a href="#" id="icon-cart"
-            ><img
-              src="https://lego.bricksmegastore.com/cdn/shop/t/838/assets/icon-bag_small.png?v=137789470096002749121767140447"
-              alt=""
-              style="margin-right: 10px; width: 22.5px; height: 22.5px"
-            /><span>(0)</span></a
-          >
-        </div>
-      </div>
-    </nav>
-    <main class="main-content">
-      <div class="container">
-        <h1 class="header">All Promotion</h1>
-        <div class="product-grid" id="all-products"></div>
-        <div class="cartTab">
-          <h2>Shopping Carting</h2>
-          <div class="listCart"></div>
-          <div class="btn">
-            <button class="close">CLOSE</button>
-            <button class="checkOut">CHECKOUT</button>
-          </div>
-        </div>
-        <footer class="footer">
-          <p>&copy; 2024 The LEGO Group. All rights reserved.</p>
-        </footer>
-      </div>
-    </main>
+                <div class="nav-icons">
+                    <a href="#"><img src="/img/heart.png" alt="" /></a>
+                    <a href="#" id="icon-cart"
+                        ><img
+                            src="https://lego.bricksmegastore.com/cdn/shop/t/838/assets/icon-bag_small.png?v=137789470096002749121767140447"
+                            alt=""
+                            style="
+                                margin-right: 10px;
+                                width: 22.5px;
+                                height: 22.5px;
+                            "
+                        /><span>(0)</span></a
+                    >
+                </div>
+            </div>
+        </nav>
+        <main class="main-content">
+            <div class="container">
+                <h1 class="header">All Promotion</h1>
+                <div class="product-grid" id="all-products"></div>
+                <div class="cartTab">
+                    <h2>Shopping Carting</h2>
+                    <div class="listCart"></div>
+                    <div class="btn">
+                        <button class="close">CLOSE</button>
+                        <button class="checkOut">CHECKOUT</button>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <p>&copy; 2024 The LEGO Group. All rights reserved.</p>
+                </footer>
+            </div>
+        </main>
 
-        <script src="js/products-data.js"></script>
-    <script src="js/product-helpers.js"></script>
-    <script src="js/product-rendering.js"></script>
-    <script src="js/product-details.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/cart-ui-toggle.js"></script>
-    <script src="js/cart.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+        <script src="js/data.js"></script>
+        <script src="js/product-helpers.js"></script>
+        <script src="js/product-rendering.js"></script>
+        <script src="js/product-details.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/cart-ui-toggle.js"></script>
+        <script src="js/cart.js"></script>
+        <script src="js/app.js"></script>
+    </body>
 </html>
-
