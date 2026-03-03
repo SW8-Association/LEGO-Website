@@ -220,3 +220,12 @@ const products = [
         ],
     },
 ];
+
+// Slide Images
+
+const images = [
+    "https://lego.bricksmegastore.com/cdn/shop/files/Boxing-Day-Deal_KV2_NEW-SETS_Web-DT.jpg?v=1766535525&width=1920",
+    "https://lego.bricksmegastore.com/cdn/shop/files/11371_COUNTDOWN_DT.jpg?v=1767067009&width=1920",
+    "https://lego.bricksmegastore.com/cdn/shop/files/21365-LoveBirds_DEC25_PreOrder_KV1_Web_Countdown-DT.jpg?v=1767060094&width=1920",
+    "https://lego.bricksmegastore.com/cdn/shop/files/21064-Paris-CityofLove_NOV25_PreOrder_KV1_Web_Countdown-DT.jpg?v=1767060094&width=1920",
+];
