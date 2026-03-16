@@ -1,5 +1,4 @@
 // Product Details Data + Rendering
-
 const setupProductDes = (product) =>
     `Build ${product.title} and recreate your favorite scenes with iconic details, rich colors, and display-ready pieces for collectors and fans alike.`;
 
